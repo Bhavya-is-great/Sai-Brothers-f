@@ -303,6 +303,10 @@ a:link{
   margin: 0;
 }
 
+.logo{
+  width: 35px;
+}
+
 .product-box img{
   width: 90%;
   height: 180px;

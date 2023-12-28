@@ -1,12 +1,13 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom'
+import logo from './images/logo.ico'
 
 function SideBar() {
   return (
     <>
     <nav style={{width:"100"+"vw"}} className="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
   <div className="container-fluid">
-    <a className="navbar-brand" href="/">Sai Brothers</a>
+    <a className="navbar-brand" href="/"> <img src={logo} alt="logo" className='logo' /> Sai Brothers</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
