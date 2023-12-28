@@ -26,7 +26,7 @@ function Updatevege() {
 
     const handlesubmit = (e) => {
         e.preventDefault()
-        axios.post('/updateditem',{table:"vegetables",title:name,quantity:quantity,price:price,image:image,id:id})
+        axios.post('https://sai-brothersbackend.onrender.com/updateditem',{table:"vegetables",title:name,quantity:quantity,price:price,image:image,id:id})
         .then(res => {
             // console.log(res)
             if (res.data.updated) {

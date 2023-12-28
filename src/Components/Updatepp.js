@@ -12,7 +12,7 @@ function Updateppc() {
     const [quantity, setQuantity] = useState('');
 
     useEffect(() => {
-        axios.post('/getitem',{table:"pproducts",id:id})
+        axios.post('https://sai-brothersbackend.onrender.com/getitem',{table:"pproducts",id:id})
         .then(res => {
             setName(res.data[0].title)
             setPrice(res.data[0].price)

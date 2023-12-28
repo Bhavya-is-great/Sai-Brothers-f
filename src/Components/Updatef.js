@@ -12,7 +12,7 @@ function Updatef() {
     const [quantity, setQuantity] = useState('');
 
     useEffect(() => {
-        axios.post('getitem',{table:"fruits",id:id})
+        axios.post('https://sai-brothersbackend.onrender.com/getitem',{table:"fruits",id:id})
         .then(res => {
             setName(res.data[0].title)
             setPrice(res.data[0].price)
@@ -26,7 +26,7 @@ function Updatef() {
 
     const handlesubmit = (e) => {
         e.preventDefault()
-        axios.post('/updateditem',{table:"fruits",title:name,quantity:quantity,price:price,image:image,id:id})
+        axios.post('https://sai-brothersbackend.onrender.com/updateditem',{table:"fruits",title:name,quantity:quantity,price:price,image:image,id:id})
         .then(res => {
             if (res.data.updated) {
                 // console.log(res)
