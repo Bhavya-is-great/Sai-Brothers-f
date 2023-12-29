@@ -40,7 +40,7 @@ function ImportFD() {
         setErrors(validate(values));
         if (errors.price === "" && errors.title === "" && errors.image === "" && errors.quantity === "") {
             console.log("Sending");
-            axios.post('https://sai-brothersbackend.onrender.com/additem', { title: titlet, quantity: quantityt, price: pricet, image: imaget, table: "pproducts" })
+            axios.post('https://sai-brothersbackend.onrender.com/additem', { title: titlet, quantity: quantityt, price: pricet, image: imaget, table: "fruits" })
                 .then(res => {
                     alert("Item added");
                     setTitlet('');
