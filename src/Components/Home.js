@@ -3,7 +3,11 @@ import SideBar from './elements/Sidebar'
 import SearchEngine from './elements/SearchEngine'
 import PopularProducts from './elements/PopularProducts';
 
-useEffect(()=>{
+
+
+
+function Home() {
+  useEffect(()=>{
   if (localStorage.getItem("list")) {
 
       // LocalStorage key already exists, so do nothing.
@@ -51,9 +55,6 @@ useEffect(()=>{
   }
  
 },[])
-
-
-function Home() {
   return (
     <div>
       <SideBar />
