@@ -9,7 +9,7 @@ function Aboutus() {
   return (
     <div>
       <SideBar />
-    <div class="my-10 mx-2 accordion" id="accordionExample">
+    <div class="mt-10 mx-2 accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
