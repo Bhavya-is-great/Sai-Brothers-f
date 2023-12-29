@@ -5,7 +5,7 @@ import logo from './elements/images/logo.ico';
 
 
 
-function Home() {
+function Aboutus() {
   return (
     <div>
       <SideBar />
@@ -63,4 +63,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Aboutus
