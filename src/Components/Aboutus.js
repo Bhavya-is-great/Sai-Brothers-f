@@ -9,7 +9,7 @@ function Aboutus() {
   return (
     <div>
       <SideBar />
-    <div class="accordion" id="accordionExample">
+    <div class="my-10 mx-2 accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -30,19 +30,19 @@ function Aboutus() {
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        Generally to get the fresh vegetables you can order at <strong>Night</strong> Otherwise you can order anytime but there is a chance to get late delivery as we deliver only fresh vegetables and fruits 😄😄😄
+        Generally to get the fresh vegetables you can order at <strong>Night</strong> Otherwise you can order anytime but there is a chance to get late delivery as we deliver only fresh vegetables and fruits and for this you will be informed 😄😄😄
     </div>
     </div>
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        How to have delivery 
+        How to have delivery 🛒🛒🛒
       </button>
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-       You can get delivery from us by confirming the details given by you in the form filled during order and bill will be sent through email so give correct email address 😄😄😄😄😄😄
+       You can get delivery from us by confirming the details given by you in the form filled during order and bill will be sent through email so give correct email address 😄😄😄😄😄😄.<br />And if you not got what you want in the list you can tell us on <strong> 9825062685 or  8460212523</strong> 😄😄😄
     </div>
     </div>
   </div>
