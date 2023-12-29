@@ -1,7 +1,57 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import SideBar from './elements/Sidebar'
 import SearchEngine from './elements/SearchEngine'
 import PopularProducts from './elements/PopularProducts';
+
+useEffect(()=>{
+  if (localStorage.getItem("list")) {
+
+      // LocalStorage key already exists, so do nothing.
+
+    } else {
+
+      // LocalStorage key doesn't exist, so create it.
+
+      localStorage.setItem("list", JSON.stringify([]));
+
+  }
+  if (localStorage.getItem("listv")) {
+
+      // LocalStorage key already exists, so do nothing.
+
+    } else {
+
+      // LocalStorage key doesn't exist, so create it.
+
+      localStorage.setItem("listv", JSON.stringify([]));
+
+  }
+  if (localStorage.getItem("listf")) {
+
+      // LocalStorage key already exists, so do nothing.
+
+    } else {
+
+      // LocalStorage key doesn't exist, so create it.
+
+      localStorage.setItem("listf", JSON.stringify([]));
+
+  }
+
+  if (localStorage.getItem("pre")) {
+
+      // LocalStorage key already exists, so do nothing.
+
+    } else {
+
+      // LocalStorage key doesn't exist, so create it.
+
+      localStorage.setItem("pre", JSON.stringify([]));
+
+  }
+ 
+},[])
+
 
 function Home() {
   return (
