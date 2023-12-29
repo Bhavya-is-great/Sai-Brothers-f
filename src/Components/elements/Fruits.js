@@ -55,7 +55,7 @@ function Fruits() {
   return (
     <section id='popular-product'>
       <div className="popular-heading">
-        <h3>Vegetables</h3><br />
+        <h3>Fruits</h3><br />
       </div>
       <div className="product-container">
         {
