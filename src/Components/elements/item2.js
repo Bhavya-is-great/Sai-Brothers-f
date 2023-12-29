@@ -23,11 +23,11 @@ function Item(props) {
       if(quantityg === 0){
         setQuantityg(0);
       }else{
-        setQuantityg(quantityg-100)
+        setQuantityg(quantityg-250)
       }
     }
     const moreg = () => {
-      setQuantityg(quantityg+100);
+      setQuantityg(quantityg+250);
     }
 
     useEffect(() => {
