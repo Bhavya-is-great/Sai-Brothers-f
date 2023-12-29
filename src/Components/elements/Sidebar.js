@@ -25,6 +25,9 @@ function SideBar() {
         <li className="nav-item">
           <NavLink className="nav-link" to="/cart"><i className='fas fa-shopping-cart'></i> Cart</NavLink>
         </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/about">About us</NavLink>
+        </li>
       </ul>
     </div>
   </div>
