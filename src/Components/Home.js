@@ -3,7 +3,7 @@ import SideBar from './elements/Sidebar'
 import SearchEngine from './elements/SearchEngine'
 import PopularProducts from './elements/PopularProducts';
 import { useNavigate } from 'react-router-dom';
-import Footer from './elements/Footer';
+
 
 
 
