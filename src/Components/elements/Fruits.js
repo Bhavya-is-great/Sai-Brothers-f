@@ -63,7 +63,7 @@ function Fruits() {
          // return(<Item mergeitems={mergeitems} key={list.id} title={list.title} quantity={list.quantity} price={list.price} image={list.image} />)
          // })
         }
-    <h1>Will be started Soon...<h1>
+    <h1>Will be started Soon...</h1>
       </div>
         <Link to="/cart" className="send-btn" onClick={final}>Finalize Order</Link>
     </section>
