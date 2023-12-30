@@ -59,6 +59,8 @@ function Home() {
     <div>
       <SideBar />
       <SearchEngine heading="Order your daily Groceries" />
+    <br /><br /><br />
+      <input type="button" value="All items" className="orderform send-btn hoverbtn" />
       <PopularProducts />
     </div>
   )
