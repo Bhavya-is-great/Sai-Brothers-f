@@ -6,7 +6,7 @@ import bg2 from './images/bg-2.png';
 
 function SearchEngine(props) {
 const [list,setList] = useState([]);
-  const [query,setQuery] = useState([]);
+  const [query,setQuery] = useState("");
   useEffect(()=>{
     axios.post("https://sai-brothersbackend.onrender.com/allitem",{table:"vegetables"})
     .then(res => {setList(res.data)})
