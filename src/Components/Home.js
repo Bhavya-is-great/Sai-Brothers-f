@@ -63,7 +63,7 @@ function Home() {
       <SideBar />
       <SearchEngine heading="Order your daily Groceries" />
     <br /><br /><br />
-      <input type="button" value="All items" onClick={navigate('/allitems/vegetables')} className="orderform send-btn hoverbtn" />
+      <input type="button" value="All items" onClick={()=>navigate('/allitems')} className="orderform send-btn hoverbtn" />
       <PopularProducts />
     </div>
   )
