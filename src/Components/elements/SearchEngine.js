@@ -1,6 +1,7 @@
 import React ,{useEffect,useState} from 'react';
 import bg1 from './images/bg-1.png';
 import bg2 from './images/bg-2.png';
+import axios from 'axios';
 
 
 
