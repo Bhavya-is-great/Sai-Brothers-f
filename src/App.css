@@ -63,6 +63,12 @@ tr:nth-child(even) {
 }
 
 
+.hoverbtn:hover{
+    content:"All items    >>";
+     background-image : url("https://i.pinimg.com/originals/39/f1/d0/39f1d0a2707646b575cdba91d34f41a5.gif");
+  }
+
+
 
 /* .active{
   background-color: white;
