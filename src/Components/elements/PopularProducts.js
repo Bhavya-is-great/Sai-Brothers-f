@@ -1,40 +1,40 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Item from './item';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 
 function PopularProducts() {
-  const [item,setItem] = useState([]);
-  const [list,setList] = useState([]);
-  const [data,setData] = useState([]);
+  const [item, setItem] = useState([]);
+  const [list, setList] = useState([]);
+  const [data, setData] = useState([]);
 
-    useEffect(()=>{
-      axios.post('https://sai-brothersbackend.onrender.com/allitem',{table:"pproducts"})
+  useEffect(() => {
+    axios.post('https://sai-brothersbackend.onrender.com/allitem', { table: "pproducts" })
       .then(res => {
         console.log("DONE");
         console.log(res.data)
         setItem(res.data);
       })
       .catch(err => console.log(err))
-    },[])
+  }, [])
 
-    function addlist(orderData) {
-      console.log(orderData);
-      setData(orderData);
-    }
+  function addlist(orderData) {
+    console.log(orderData);
+    setData(orderData);
+  }
 
-    useEffect(()=>{
-      setList([...list,data]);
-    },[data])
+  useEffect(() => {
+    setList([...list, data]);
+  }, [data])
 
-    useEffect(()=>{
-      console.log(list);
-    },[list])
+  useEffect(() => {
+    console.log(list);
+  }, [list])
 
-    const finalize = () => {
-      localStorage.setItem("list",JSON.stringify(list));
-    }
+  const finalize = () => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }
 
   return (
     <section id='popular-product'>
@@ -44,12 +44,12 @@ function PopularProducts() {
       </div>
       <div className="product-container">
         {
-          item.map((list) => {
-            return(<Item order={addlist} key={list.id} title={list.title} quantity={list.quantity} price={list.price} image={list.image} />)
+          item.map((listitem) => {
+            return (<Item order={addlist} key={listitem.id} title={listitem.title} quantity={listitem.quantity} price={listitem.price} image={listitem.image} />)
           })
         }
       </div>
-        <Link to="/cart" onClick={finalize} className="send-btn">Finalize Order</Link>
+      <Link to="/cart" onClick={finalize} className="send-btn">Finalize Order</Link>
     </section>
   )
 }

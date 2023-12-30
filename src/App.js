@@ -17,6 +17,7 @@ import Updatef from './Components/Updatef';
 import Updatevege from './Components/Updatevege';
 import Updateppc from './Components/Updatepp';
 import About from './Components/Aboutus';
+import Search from './Components/Search';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route exact path='/updatef/:id' element={<Updatef/>} ></Route>
           <Route exact path='/updatevege/:id' element={<Updatevege/>} ></Route>
           <Route exact path='/updatepp/:id' element={<Updateppc/>} ></Route>
+          <Route exact path='/search/:name' element={<Search />} ></Route>
           <Route exact path='/about' element={<About />} ></Route>
         </Routes>
       </BrowserRouter>

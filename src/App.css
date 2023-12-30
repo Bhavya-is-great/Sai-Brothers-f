@@ -384,8 +384,8 @@ a:link{
 .btncont{
   width: 15rem;
   height: 40px;
-  background-color: #acfffb;
-  color: #8fcef3;
+  background-color: #e0fffde5;
+  color: #41a4dd;
   margin-top: 20px;
   cursor: pointer;
   transition: all ease 0.5s;
@@ -730,3 +730,4 @@ a:link{
       font-size: 0.5rem;
   }
 }
+

@@ -22,6 +22,7 @@ function Cart() {
   const [listv, setListv] = useState([]);
   const [listf, setListf] = useState([]);
   const [list, setList] = useState([]);
+  const [lists, setLists] = useState([]);
   const [listpre, setListpre] = useState([]);
   const [data, setData] = useState([]);
   const [tp, setTp] = useState(300);
@@ -148,6 +149,7 @@ function Cart() {
           localStorage.setItem('listv',JSON.stringify([]));
           localStorage.setItem('listf',JSON.stringify([]));
           localStorage.setItem('pre',JSON.stringify([]));
+          localStorage.setItem('lists',JSON.stringify([]));
           localStorage.setItem('yn',"flase")
         } else {
           alert("Please Fill all details");
@@ -159,8 +161,10 @@ function Cart() {
   useEffect(() => {
 
     setListpre(JSON.parse(localStorage.getItem("pre")).filter(item => item !== null && JSON.stringify(item) !== '{}'))
+    setLists(JSON.parse(localStorage.getItem("lists")).filter(item => item !== null && JSON.stringify(item) !== '{}'))
     setList(JSON.parse(localStorage.getItem("list")).filter(item => item !== null && JSON.stringify(item) !== '{}'));
     setListf(JSON.parse(localStorage.getItem("listf")).filter(item => item !== null && JSON.stringify(item) !== '{}' && JSON.stringify(item) !== '[]'))
+    // setLists(JSON.parse(localStorage.getItem("lists")).filter(item => item !== null && JSON.stringify(item) !== '{}' && JSON.stringify(item) !== '[]'))
     setListv(JSON.parse(localStorage.getItem("listv")).filter(item => item !== null && JSON.stringify(item) !== '{}' && JSON.stringify(item) !== '[]'))
   }, []);
 
@@ -172,6 +176,12 @@ function Cart() {
     });
   }, [listf])// eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    handleArray();
+    return(()=>{
+      console.log("Sai Brothers");
+    });
+  }, [lists])
 
 
   const total = () => {
@@ -202,6 +212,11 @@ function Cart() {
       }
     });
     listv.forEach(element => {
+      if (JSON.stringify(element) !== '[]') {
+        newlist.push(element);
+      }
+    });
+    lists.forEach(element => {
       if (JSON.stringify(element) !== '[]') {
         newlist.push(element);
       }
@@ -248,6 +263,7 @@ function Cart() {
     localStorage.setItem('listv',JSON.stringify([]));
     localStorage.setItem('listf',JSON.stringify([]));
     localStorage.setItem('pre',JSON.stringify([]));
+    localStorage.setItem('lists',JSON.stringify([]));
     localStorage.setItem('yn',"false");
   }
 
@@ -257,6 +273,7 @@ function Cart() {
     localStorage.setItem('listv',JSON.stringify([]))
     localStorage.setItem('listf',JSON.stringify([]))
     localStorage.setItem('list',JSON.stringify([]))
+    localStorage.setItem('lists',JSON.stringify([]))
   }
 
   // optimisedata()
