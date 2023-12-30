@@ -2,6 +2,7 @@ import React , {useEffect} from 'react';
 import SideBar from './elements/Sidebar'
 import SearchEngine from './elements/SearchEngine'
 import PopularProducts from './elements/PopularProducts';
+import {useNavigate} from 'react-router-dom';
 
 
 
@@ -53,6 +54,8 @@ function Home() {
       localStorage.setItem("pre", JSON.stringify([]));
 
   }
+
+    const navigate = useNavigate();
  
 },[])
   return (
@@ -60,7 +63,7 @@ function Home() {
       <SideBar />
       <SearchEngine heading="Order your daily Groceries" />
     <br /><br /><br />
-      <input type="button" value="All items" className="orderform send-btn hoverbtn" />
+      <input type="button" value="All items" onClick={naviagte('/allitems/vegetables')} className="orderform send-btn hoverbtn" />
       <PopularProducts />
     </div>
   )
