@@ -54,10 +54,9 @@ function Home() {
       localStorage.setItem("pre", JSON.stringify([]));
 
   }
-
-    const navigate = useNavigate();
  
 },[])
+  const navigate = useNavigate();
   return (
     <div>
       <SideBar />
