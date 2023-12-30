@@ -33,7 +33,7 @@ const handleSubmit = () => {}
         <input type="text" onChange={handleChange} list="queryy" value={query} className='search-input' placeholder='search your daily grocery' required />
     <datalist id="queryy">
     {
-     list.map((item)) => {
+     list.map((item) => {
     return(
       <option value={item.title} ></option>
     )
