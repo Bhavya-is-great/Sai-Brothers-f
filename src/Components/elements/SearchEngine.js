@@ -8,7 +8,7 @@ function SearchEngine(props) {
 const [list,setList] = useState([]);
   const [query,setQuery] = useState([]);
   useEffect(()=>{
-    axios.post("https://sai-brothers.onrender.com/allitem",{table:"vegetables"})
+    axios.post("https://sai-brothersbackend.onrender.com/allitem",{table:"vegetables"})
     .then(res => {setList(res.data)})
     .catch(err => console.log(err))
   },[]);
