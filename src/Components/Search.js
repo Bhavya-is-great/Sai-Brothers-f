@@ -6,6 +6,9 @@ import Item from './elements/item';
 
 function Search() {
   const [oneitem, setOneitem] = useState([]);
+  const [data, setData] = useState([]);
+  const [list, setList] = useState([]);
+  const [order, setOrder] = useState([]);
   const { name } = useParams();
   // const finalname = newname.join(" ")
   console.log(name)
@@ -13,26 +16,38 @@ function Search() {
     axios.post('https://sai-brothersbackend.onrender.com/getitemn', { table: "vegetables", name: name })
       .then(res => setOneitem(res.data))
       .catch(err => console.log(err))
+    axios.post('https://sai-brothersbackend.onrender.com/allitem', { table: "vegetables"})
+      .then(res => setData(res.data))
+      .catch(err => console.log(err))
   }, [])
+
+  useEffect(()=>{
+    console.log(data);
+    const filteredArray = data.filter((dict) => dict.title.toLowerCase().includes(name.toLowerCase()));
+    setList(filteredArray)
+  },[data])
   
   const navigate = useNavigate();
   const  Addlist = (orderData) => {
     console.log(orderData);
-    localStorage.setItem("lists",JSON.stringify([orderData]));
+    // localStorage.setItem("lists",JSON.stringify([orderData]));
+    setOrder([...order,orderData])
   }
   
   return (
     <div>
       <SideBar />
       <h3>Search results</h3>
+      <div className='product-container'>
       {
-        oneitem.map((listitem) => {
+        list.map((listitem) => {
           return (
             <Item order={Addlist} key={listitem.id} title={listitem.title} quantity={listitem.quantity} price={listitem.price} image={listitem.image} />
           )
         })
       }
-      <button onClick={()=>{navigate('/cart')}} className='send-btn'>Finalize Order</button>
+      </div>
+      <button onClick={()=>{localStorage.setItem("lists",JSON.stringify(order));navigate('/cart')}} className='send-btn'>Finalize Order</button>
     </div>
   )
 }
