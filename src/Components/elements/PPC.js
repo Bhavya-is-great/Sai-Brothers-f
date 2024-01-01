@@ -7,7 +7,7 @@ function PPC() {
     const [items, setItems] = useState([]);
 
     function getdata123() {
-        axios.post('https://sai-brothersbackend.onrender.com/allitem', { table: "pproducts" })
+        axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`, { table: "pproducts" })
             .then(res => {
                 console.log("DONE");
                 console.log(res.data)
@@ -30,7 +30,7 @@ function PPC() {
     const navigate = useNavigate();
 
     const handleDelete = (id) => {
-        axios.post('https://sai-brothersbackend.onrender.com/deleteitem',{table:"pproducts",id:id})
+        axios.post(`${process.env.REACT_APP_BASE_URL}/deleteitem`,{table:"pproducts",id:id})
         .then(res => {
             if (res.data.deleted) {
                 navigate('/developer')

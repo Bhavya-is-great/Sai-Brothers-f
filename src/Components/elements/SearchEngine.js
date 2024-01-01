@@ -16,7 +16,7 @@ function SearchEngine(props) {
   }
 
   useEffect(()=>{
-    axios.post('https://sai-brothersbackend.onrender.com/allitem',{table:"vegetables"})
+    axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`,{table:"vegetables"})
     .then(res => {
       setList(res.data)
     })

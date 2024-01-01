@@ -43,7 +43,7 @@ function Fruits() {
   // }
 
   useEffect(() => {
-    axios.post('https://sai-brothersbackend.onrender.com/allitem',{table:"fruits"})
+    axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`,{table:"fruits"})
       .then(res => {
         console.log("DONE");
         console.log(res.data)

@@ -8,7 +8,7 @@ function Fruitsc() {
     const [items, setItems] = useState([]);
 
     function getdata123() {
-        axios.post('https://sai-brothersbackend.onrender.com/allitem', { table: "fruits" })
+        axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`, { table: "fruits" })
             .then(res => {
                 console.log("DONE");
                 console.log(res.data);
@@ -31,7 +31,7 @@ function Fruitsc() {
     const navigate = useNavigate();
 
     const handleDelete = (id) => {
-        axios.post('https://sai-brothersbackend.onrender.com/deleteitem',{table:"fruits",id:id})
+        axios.post(`${process.env.REACT_APP_BASE_URL}/deleteitem`,{table:"fruits",id:id})
         .then(res => {
             if (res.data.deleted) {
                 navigate('/developer')

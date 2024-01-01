@@ -13,10 +13,10 @@ function Search() {
   // const finalname = newname.join(" ")
   console.log(name)
   useEffect(() => {
-    axios.post('https://sai-brothersbackend.onrender.com/getitemn', { table: "vegetables", name: name })
+    axios.post(`${process.env.REACT_APP_BASE_URL}/getitemn`, { table: "vegetables", name: name })
       .then(res => setOneitem(res.data))
       .catch(err => console.log(err))
-    axios.post('https://sai-brothersbackend.onrender.com/allitem', { table: "vegetables"})
+    axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`, { table: "vegetables"})
       .then(res => setData(res.data))
       .catch(err => console.log(err))
   }, [])

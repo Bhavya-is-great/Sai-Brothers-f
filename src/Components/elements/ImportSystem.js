@@ -38,7 +38,7 @@ function ImportSystem() {
     const handleSubmit = (event) => {
         event.preventDefault();
         setErrors(validate(values));
-        axios.post('https://sai-brothersbackend.onrender.com/additem', { title: titlet, quantity: quantityt, price: pricet, image: imaget, table: "pproducts" })
+        axios.post(`${process.env.REACT_APP_BASE_URL}/additem`, { title: titlet, quantity: quantityt, price: pricet, image: imaget, table: "pproducts" })
             .then(res => {
                 alert("Item added");
                 setTitlet('');

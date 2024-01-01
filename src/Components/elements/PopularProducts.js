@@ -10,7 +10,7 @@ function PopularProducts() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.post('https://sai-brothersbackend.onrender.com/allitem', { table: "pproducts" })
+    axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`, { table: "pproducts" })
       .then(res => {
         console.log("DONE");
         console.log(res.data)

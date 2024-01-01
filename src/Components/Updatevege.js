@@ -12,7 +12,7 @@ function Updatevege() {
     const [quantity, setQuantity] = useState('');
 
     useEffect(() => {
-        axios.post('https://sai-brothersbackend.onrender.com/getitem',{table:"vegetables",id:id})
+        axios.post(`${process.env.REACT_APP_BASE_URL}/getitem`,{table:"vegetables",id:id})
         .then(res => {
             setName(res.data[0].title)
             setPrice(res.data[0].price)
@@ -26,7 +26,7 @@ function Updatevege() {
 
     const handlesubmit = (e) => {
         e.preventDefault()
-        axios.post('https://sai-brothersbackend.onrender.com/updateditem',{table:"vegetables",title:name,quantity:quantity,price:price,image:image,id:id})
+        axios.post(`${process.env.REACT_APP_BASE_URL}/updateditem`,{table:"vegetables",title:name,quantity:quantity,price:price,image:image,id:id})
         .then(res => {
             // console.log(res)
             if (res.data.updated) {

@@ -39,7 +39,7 @@ function ImportVege() {
     const handleSubmit = (event) => {
         event.preventDefault();
         setErrors(validate(values));
-        axios.post('https://sai-brothersbackend.onrender.com/additem', { title: titlet, quantity: quantityt, price: pricet, image: imaget, table: "vegetables" })
+        axios.post(`${process.env.REACT_APP_BASE_URL}/additem`, { title: titlet, quantity: quantityt, price: pricet, image: imaget, table: "vegetables" })
             .then(res => {
                 alert("Item added");
                 setTitlet('');

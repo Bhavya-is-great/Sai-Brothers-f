@@ -7,7 +7,7 @@ function Vegec() {
     const [items, setItems] = useState([]);
 
     function getdata123() {
-        axios.post('https://sai-brothersbackend.onrender.com/allitem', { table: "vegetables" })
+        axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`, { table: "vegetables" })
             .then(res => {
                 console.log("DONE");
                 console.log(res.data)
@@ -30,7 +30,7 @@ function Vegec() {
     const navigate = useNavigate();
 
     const handleDelete = (id) => {
-        axios.post('https://sai-brothersbackend.onrender.com/deleteitem',{table:"vegetables",id:id})
+        axios.post(`${process.env.REACT_APP_BASE_URL}/deleteitem`,{table:"vegetables",id:id})
         .then(res => {
             if (res.data.deleted) {
                 navigate('/developer')
