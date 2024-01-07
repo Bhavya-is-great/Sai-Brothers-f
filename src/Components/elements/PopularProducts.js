@@ -1,17 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Item from './item';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import loadinggif from './images/loadinggif.svg'
 
 
 function PopularProducts() {
   const [item, setItem] = useState([]);
   const [list, setList] = useState([]);
   const [data, setData] = useState([]);
+  const loadingref = useRef(null);
+  const loadingref2 = useRef(null);
 
   useEffect(() => {
-    axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`, { table: "pproducts" })
+    loadingref.current.style.display = "block";
+    loadingref2.current.style.display = "block";
+    axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`, { table: "vegetables" })
       .then(res => {
+        loadingref.current.style.display = "none";
+        loadingref2.current.style.display = "none";
         console.log("DONE");
         console.log(res.data)
         setItem(res.data);
@@ -39,8 +46,23 @@ function PopularProducts() {
   return (
     <section id='popular-product'>
       <div className="popular-heading">
-        <h3>Popular Products</h3>
+        <h3>All Products</h3>
         <span>All</span>
+      </div>
+      <div className="loadingmain">
+        <div className="loadingdiv" ref={loadingref} style={{ display: 'none' }}>
+          <img className='loadinggif' src={loadinggif} alt="Loading image" />
+        </div>
+        <div ref={loadingref2} className="loadingdiv">
+          <h1>Loading
+            <div class="loadingContainer">
+              <div class="ball1"></div>
+              <div class="ball2"></div>
+              <div class="ball3"></div>
+              <div class="ball4"></div>
+            </div>
+          </h1>
+        </div>
       </div>
       <div className="product-container">
         {

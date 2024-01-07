@@ -1,14 +1,17 @@
-import React,{useState} from 'react'
+import React,{useRef, useState} from 'react'
 import axios from 'axios';
 import { useEffect } from 'react';
 import Item from './item2';
 import { Link } from 'react-router-dom';
 // import gdfs from '../../config/Getdata';
+import loadinggif from './images/loadinggif.svg';
 
 function Fruits() {
   const [items,setItems] = useState([]);
   const [listi , setList] = useState([]);
   const [data , setData] = useState([]);
+  const loadingref = useRef(null)
+  const loadingref2 = useRef(null)
 
   // const mergeitems = (values) => {
   //   // setValue(values);
@@ -43,8 +46,12 @@ function Fruits() {
   // }
 
   useEffect(() => {
+    // loadingref.current.style.display = "block";
+    // loadingref2.current.style.display = "block";
     axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`,{table:"fruits"})
-      .then(res => {
+    .then(res => {
+        // loadingref.current.style.display = "none";
+        // loadingref2.current.style.display = "none";
         console.log("DONE");
         console.log(res.data)
         setItems(res.data);
@@ -57,6 +64,21 @@ function Fruits() {
       <div className="popular-heading">
         <h3>Fruits</h3><br />
       </div>
+      {/* <div className="loadingmain">
+        <div className="loadingdiv" ref={loadingref} style={{ display: 'none' }}>
+          <img className='loadinggif' src={loadinggif} alt="Loading image" />
+        </div>
+        <div ref={loadingref2} className="loadingdiv">
+          <h1>Loading
+            <div class="loadingContainer">
+              <div class="ball1"></div>
+              <div class="ball2"></div>
+              <div class="ball3"></div>
+              <div class="ball4"></div>
+            </div>
+          </h1>
+        </div>
+      </div> */}
       <div className="product-container">
         {
           // items.map((list) => {
