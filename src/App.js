@@ -25,8 +25,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Home/>} ></Route>
-          <Route exact path='/cart' element={<Cart/>} ></Route>
-          <Route exact path='/developer' element={<Developer />} >
+          <Route path='/cart' element={<Cart/>} ></Route>
+          <Route path='/developer' element={<Developer />} >
             <Route path='importfd' element={<ImportFD />} ></Route>
             <Route path='importp' element={<ImportSystem />} ></Route>
             <Route path='importvege' element={<ImportVege />} ></Route>
@@ -34,15 +34,15 @@ function App() {
             <Route path='vegec' element={<Vegec />} ></Route>
             <Route path='ppc' element={<PPC />} ></Route>
           </Route>
-          <Route exact path='/allitems' element={<AllItems />} >
+          <Route path='/allitems' element={<AllItems />} >
             <Route path='vegetables' element={<Vegetables/>} ></Route>
             <Route path='fruits' element={<Fruits/>} ></Route>
           </Route>
-          <Route exact path='/updatef/:id' element={<Updatef/>} ></Route>
-          <Route exact path='/updatevege/:id' element={<Updatevege/>} ></Route>
-          <Route exact path='/updatepp/:id' element={<Updateppc/>} ></Route>
-          <Route exact path='/search/:name' element={<Search />} ></Route>
-          <Route exact path='/about' element={<About />} ></Route>
+          <Route path='/updatef/:id' element={<Updatef/>} ></Route>
+          <Route path='/updatevege/:id' element={<Updatevege/>} ></Route>
+          <Route path='/updatepp/:id' element={<Updateppc/>} ></Route>
+          <Route path='/search/:name' element={<Search />} ></Route>
+          <Route path='/about' element={<About />} ></Route>
         </Routes>
       </BrowserRouter>
     </>
