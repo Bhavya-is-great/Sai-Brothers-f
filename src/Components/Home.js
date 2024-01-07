@@ -61,7 +61,7 @@ function Home() {
 
       // LocalStorage key doesn't exist, so create it.
 
-      localStorage.setItem("pre", JSON.stringify([]));
+      localStorage.setItem("lists", JSON.stringify([]));
 
     }
 
