@@ -666,14 +666,14 @@ body{
   }
 
   .product-container{
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
   }
 
   .product-box .quantity-to-product{
     font-size: 80%;
   }
 
-  .product-box{
+  /* .product-box{
     font-size: 20px;
     width: 200px;
     height: 370px;
@@ -701,7 +701,7 @@ body{
   .cart-btn{
     width: 50px;
     font-size: 15px;
-  }
+  } */
 
 }
 
@@ -720,7 +720,7 @@ body{
     font-size: 80%;
   }
 
-  .product-box{
+  /* .product-box{
     font-size: 20px;
     width: 170px;
     height: 370px;
@@ -746,15 +746,15 @@ body{
   .icon{
     width: 17px;
     /* margin: 2px; */
-    margin: 1px;
-  }
-  .cart-btn{
-    width: 50px;
-    font-size: 15px;
-  }
+    /* margin: 1px; */
+  /* } */
+  /* .cart-btn{ */
+    /* width: 50px; */
+    /* font-size: 15px; */
+  /* } */ 
 }
 
-@media (max-width:400px){
+/* @media (max-width:400px){
   .product-box .quantity-to-product{
     font-size: 60%;
   }
@@ -785,49 +785,49 @@ body{
   .icon{
     width: 15px;
     /* margin: 2px; */
-    margin: 1px;
-  }
+    /* margin: 1px; */
+  /* } */
 
-  .cart-btn{
-    padding: 5px;
-    font-size: 11px;
-    margin: auto;
-    height: 20px;
-  }
-}
+  /* .cart-btn{ */
+    /* padding: 5px; */
+    /* font-size: 11px; */
+    /* margin: auto; */
+    /* height: 20px; */
+  /* } */
+/* } */ 
 
-@media (max-width:350px) {
-  .product-container{
-    grid-template-columns: 1fr;
-  }
-  .product-box{
-    width: 300px;
-    height: 525px;
-  }
+/* @media (max-width:350px) { */
+  /* .product-container{ */
+    /* grid-template-columns: 1fr; */
+  /* } */
+  /* .product-box{ */
+    /* width: 300px; */
+    /* height: 525px; */
+  /* } */
 
-  .product-box img{
-    height: 100%;
-  }
+  /* .product-box img{ */
+    /* height: 100%; */
+  /* } */
 
-  .product-box .price,.product-box .quantity,.product-box strong, .product-box .quantity-to-product{
-    font-size: 100%;
-  }
-  .icon{
-    width: auto;
-  }
+  /* .product-box .price,.product-box .quantity,.product-box strong, .product-box .quantity-to-product{ */
+    /* font-size: 100%; */
+  /* } */
+  /* .icon{ */
+    /* width: auto; */
+  /* } */
 
-  .cart-btn{
-    padding: 5px;
-    font-size: 100%;
-  }
+  /* .cart-btn{ */
+    /* padding: 5px; */
+    /* font-size: 100%; */
+  /* } */
   
-}
+/* } */
 
-@media (max-width:300px) {
-  .product-box{
-    width: 270px;
-  }
-}
+/* @media (max-width:300px) { */
+  /* .product-box{ */
+    /* width: 270px; */
+  /* } */
+/* } */
 
 
 
