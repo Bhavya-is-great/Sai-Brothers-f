@@ -35,6 +35,7 @@ function Developer() {
           <Link className='send-btn' to='vegec'>Change Vegetables</Link>
           <Link className='send-btn' to='ppc'>Change Popular Products</Link>
           <Link className='send-btn' to='change'>Change</Link>
+          <Link className='send-btn' to='change'>Change2</Link>
         </div><br/><br/><br/><br/><br />
         <Outlet/>
     </>
