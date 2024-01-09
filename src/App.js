@@ -18,6 +18,7 @@ import Updatevege from './Components/Updatevege';
 import Updateppc from './Components/Updatepp';
 import About from './Components/Aboutus';
 import Search from './Components/Search';
+import ChangeList from './Components/elements/ChangeList';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path='fruitsc' element={<Fruitsc />} ></Route>
             <Route path='vegec' element={<Vegec />} ></Route>
             <Route path='ppc' element={<PPC />} ></Route>
+            <Route path='change' element={<ChangeList />} ></Route>
           </Route>
           <Route path='/allitems' element={<AllItems />} >
             <Route path='vegetables' element={<Vegetables/>} ></Route>
