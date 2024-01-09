@@ -74,6 +74,12 @@ function PopularProducts() {
 
   useEffect(() => {
      console.log(list1);
+   // return(()=>funcc())
+  }, [list1])
+
+useEffect(() => {
+     console.log(item);
+   // return(()=>funcc())
 var stringArray = list1.split("\n");
 
       const sortedDictArray = item.sort((dict1, dict2) => {
@@ -95,9 +101,9 @@ var stringArray = list1.split("\n");
       setData1(sortedDictArray);
       loadingref.current.style.display = "none";
       loadingref2.current.style.display = "none";
+  }, [item])
 
-   // return(()=>funcc())
-  }, [list1])
+
 
   const finalize = () => {
     localStorage.setItem("list", JSON.stringify(list));
