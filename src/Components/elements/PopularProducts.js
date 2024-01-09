@@ -74,7 +74,29 @@ function PopularProducts() {
 
   useEffect(() => {
      console.log(list1);
-    return(()=>funcc())
+var stringArray = list1.split("\n");
+
+      const sortedDictArray = item.sort((dict1, dict2) => {
+        let dict1Index = stringArray.indexOf(dict1.title);
+        let dict2Index = stringArray.indexOf(dict2.title);
+
+        if (dict1Index === -1) {
+          dict1Index = stringArray.length + 1;
+        }
+
+        if (dict2Index === -1) {
+          dict2Index = stringArray.length + 1;
+        }
+
+        return dict1Index - dict2Index;
+      });
+      console.log(sortedDictArray)
+      console.log(stringArray);
+      setData1(sortedDictArray);
+      loadingref.current.style.display = "none";
+      loadingref2.current.style.display = "none";
+
+   // return(()=>funcc())
   }, [list1])
 
   const finalize = () => {
