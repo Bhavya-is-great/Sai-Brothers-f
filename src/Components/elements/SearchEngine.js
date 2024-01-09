@@ -33,7 +33,7 @@ function SearchEngine(props) {
 
       <div className="search-banner-text">
         <h1>{props.heading}</h1>
-        <strong>#Free delivery on purchase of at least 250</strong>
+        <strong>#Free delivery on purchase of at least 200</strong>
       <form onSubmit={handleClick} className='search-box'>
         <i className='fas fa-search'></i>
         <input ref={dataref} type="text" onChange={handleChange} list='queryy' className='search-input' placeholder='search your daily grocery' value={query} required />
