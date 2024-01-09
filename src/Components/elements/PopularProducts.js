@@ -8,6 +8,8 @@ import loadinggif from './images/loadinggif.svg'
 function PopularProducts() {
   const [item, setItem] = useState([]);
   const [list, setList] = useState([]);
+  const [list1, setList1] = useState([]);
+  const [data1, setData1] = useState([]);
   const [data, setData] = useState([]);
   const loadingref = useRef(null);
   const loadingref2 = useRef(null);
@@ -15,10 +17,13 @@ function PopularProducts() {
   useEffect(() => {
     loadingref.current.style.display = "block";
     loadingref2.current.style.display = "block";
+
+    axios.post(`${process.env.REACT_APP_BASE_URL}/getlist`, { data: "1" })
+      .then(res => { setList1(res.data[0].list) })
+      .catch(err => console.log(err))
+
     axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`, { table: "vegetables" })
       .then(res => {
-        loadingref.current.style.display = "none";
-        loadingref2.current.style.display = "none";
         console.log("DONE");
         console.log(res.data)
         setItem(res.data);
@@ -38,6 +43,36 @@ function PopularProducts() {
   useEffect(() => {
     console.log(list);
   }, [list])
+
+  useEffect(() => {
+    console.log(data1);
+  }, [data1])
+
+  useEffect(() => {
+    if (JSON.stringify(list1) !== "[]") {
+      var stringArray = list1.split("\n");
+
+      const sortedDictArray = item.sort((dict1, dict2) => {
+        let dict1Index = stringArray.indexOf(dict1.title);
+        let dict2Index = stringArray.indexOf(dict2.title);
+
+        if (dict1Index === -1) {
+          dict1Index = stringArray.length + 1;
+        }
+
+        if (dict2Index === -1) {
+          dict2Index = stringArray.length + 1;
+        }
+
+        return dict1Index - dict2Index;
+      });
+      console.log(sortedDictArray)
+      console.log(stringArray);
+      setData1(sortedDictArray);
+      loadingref.current.style.display = "none";
+      loadingref2.current.style.display = "none";
+    }
+  }, [list1])
 
   const finalize = () => {
     localStorage.setItem("list", JSON.stringify(list));
@@ -66,7 +101,7 @@ function PopularProducts() {
       </div>
       <div className="product-container">
         {
-          item.map((listitem) => {
+          data1.map((listitem) => {
             return (<Item order={addlist} key={listitem.id} title={listitem.title} quantity={listitem.quantity} price={listitem.price} image={listitem.image} />)
           })
         }
