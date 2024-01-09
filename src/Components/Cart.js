@@ -126,9 +126,9 @@ function Cart() {
     if (JSON.stringify(list) === '[]' && JSON.stringify(listf) === '[]' && JSON.stringify(listv) === '[]') {
       alert("Please Purchase Something for placing order");
     } else {
-      if (tp < 250) {
+      if (tp < 200) {
         // console.log(tp)
-        alert("Please Purchase atleast of 250");
+        alert("Please Purchase atleast of 200");
       } else {
         if (userdata.address !== '' || userdata.name !== '' || userdata.email !== '' || userdata.number !== '' || userdata.message !== '') {
           customer()
