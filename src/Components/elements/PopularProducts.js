@@ -48,9 +48,8 @@ function PopularProducts() {
     console.log(data1);
   }, [data1])
 
-  useEffect(() => {
-    if (JSON.stringify(list1) !== "[]") {
-      var stringArray = list1.split("\n");
+  const funcc = () => {
+    var stringArray = list1.split("\n");
 
       const sortedDictArray = item.sort((dict1, dict2) => {
         let dict1Index = stringArray.indexOf(dict1.title);
@@ -71,7 +70,11 @@ function PopularProducts() {
       setData1(sortedDictArray);
       loadingref.current.style.display = "none";
       loadingref2.current.style.display = "none";
-    }
+  }
+
+  useEffect(() => {
+     conosle.log(list1);
+    return(()=>funcc())
   }, [list1])
 
   const finalize = () => {
