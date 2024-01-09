@@ -73,7 +73,7 @@ function PopularProducts() {
   }
 
   useEffect(() => {
-     conosle.log(list1);
+     console.log(list1);
     return(()=>funcc())
   }, [list1])
 
