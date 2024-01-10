@@ -95,6 +95,7 @@ function PopularProducts() {
       console.log(sortedDictArray)
       console.log(stringArray);
       setData1(sortedDictArray);
+      funcc()
       loadingref.current.style.display = "none";
       loadingref2.current.style.display = "none";
     }
