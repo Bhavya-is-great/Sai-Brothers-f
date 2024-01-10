@@ -18,16 +18,16 @@ function PopularProducts() {
     loadingref.current.style.display = "block";
     loadingref2.current.style.display = "block";
 
-    axios.post(`${process.env.REACT_APP_BASE_URL}/getlist`, { data: "1" })
-      .then(res => { setList1(res.data[0].list) })
-      .catch(err => console.log(err))
-
     axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`, { table: "vegetables" })
       .then(res => {
         console.log("DONE");
         console.log(res.data)
         setItem(res.data);
       })
+      .catch(err => console.log(err));
+
+    axios.post(`${process.env.REACT_APP_BASE_URL}/getlist`, { data: "1" })
+      .then(res => { setList1(res.data[0].list) })
       .catch(err => console.log(err))
   }, [])
 
@@ -75,6 +75,29 @@ function PopularProducts() {
   useEffect(() => {
      console.log(list1);
    // return(()=>funcc())
+    if(JSON.stringify(list1) !== '[]'){
+  var stringArray = list1.split("\n");
+
+      const sortedDictArray = item.sort((dict1, dict2) => {
+        let dict1Index = stringArray.indexOf(dict1.title);
+        let dict2Index = stringArray.indexOf(dict2.title);
+
+        if (dict1Index === -1) {
+          dict1Index = stringArray.length + 1;
+        }
+
+        if (dict2Index === -1) {
+          dict2Index = stringArray.length + 1;
+        }
+
+        return dict1Index - dict2Index;
+      });
+      console.log(sortedDictArray)
+      console.log(stringArray);
+      setData1(sortedDictArray);
+      loadingref.current.style.display = "none";
+      loadingref2.current.style.display = "none";
+    }
   }, [list1])
 
 useEffect(() => {
