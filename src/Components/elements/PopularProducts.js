@@ -46,6 +46,12 @@ function PopularProducts() {
 
   useEffect(() => {
     console.log(data1);
+    if(JSON.stringify(data1) !== '[]'){
+loadingref.current.style.display = "none";
+      loadingref2.current.style.display = "none";
+}else{
+      funcc()
+}
   }, [data1])
 
   const funcc = () => {
