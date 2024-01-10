@@ -18,16 +18,42 @@ function PopularProducts() {
     loadingref.current.style.display = "block";
     loadingref2.current.style.display = "block";
 
-    axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`, { table: "vegetables" })
-      .then(res => {
-        console.log("DONE");
-        console.log(res.data)
-        setItem(res.data);
-      })
-      .catch(err => console.log(err));
+
+
 
     axios.post(`${process.env.REACT_APP_BASE_URL}/getlist`, { data: "1" })
-      .then(res => { setList1(res.data[0].list) })
+      .then(res => {
+        axios.post(`${process.env.REACT_APP_BASE_URL}/allitem`, { table: "vegetables" })
+          .then(res1 => {
+            console.log("DONE");
+            // setList1(res.data[0].list)
+            const stringArray = res.data[0].list.split("\n");
+            console.log(stringArray)
+            const DictArray = res1.data
+            const sortedDictArray = DictArray.sort((dict1, dict2) => {
+              let dict1Index = stringArray.indexOf(dict1.title);
+              let dict2Index = stringArray.indexOf(dict2.title);
+
+              if (dict1Index === -1) {
+                dict1Index = stringArray.length + 1;
+              }
+
+              if (dict2Index === -1) {
+                dict2Index = stringArray.length + 1;
+              }
+
+              return dict1Index - dict2Index;
+            });
+            console.table(sortedDictArray);
+            console.log(stringArray);
+            setData1(sortedDictArray);
+            loadingref.current.style.display = "none";
+            loadingref2.current.style.display = "none";
+            // console.log(res1.data)
+            // setItem(res1.data);
+          })
+          .catch(err => console.log(err))
+      })
       .catch(err => console.log(err))
   }, [])
 
@@ -44,12 +70,9 @@ function PopularProducts() {
     console.log(list);
   }, [list])
 
-  useEffect(() => {
-    console.log(data1);
-  }, [data1])
-
-  const funcc = () => {
-    var stringArray = list1.split("\n");
+  function funcc() {
+    if (JSON.stringify(list1) !== "[]") {
+      var stringArray = list1.split("\n");
 
       const sortedDictArray = item.sort((dict1, dict2) => {
         let dict1Index = stringArray.indexOf(dict1.title);
@@ -70,13 +93,25 @@ function PopularProducts() {
       setData1(sortedDictArray);
       loadingref.current.style.display = "none";
       loadingref2.current.style.display = "none";
+    }
   }
 
   useEffect(() => {
-     console.log(list1);
-   // return(()=>funcc())
-    if(JSON.stringify(list1) !== '[]'){
-  var stringArray = list1.split("\n");
+    // console.log(`\n\n\n\n\n\n\n\n\n\n\n`);
+    console.log(data1)
+    // console.log(`\n\n\n\n\n\n\n\n\n\n`);
+    // if (JSON.stringify(data1) === '[]') {
+    //   console.log("KAR RAHA HU")
+    //   funcc()
+    // }else{
+    //   console.log(JSON.stringify(data1))
+    // }
+  }, [data1])
+
+  useEffect(() => {
+    console.log(list1);
+    if (JSON.stringify(list1) !== "[]") {
+      var stringArray = list1.split("\n");
 
       const sortedDictArray = item.sort((dict1, dict2) => {
         let dict1Index = stringArray.indexOf(dict1.title);
@@ -95,18 +130,10 @@ function PopularProducts() {
       console.log(sortedDictArray)
       console.log(stringArray);
       setData1(sortedDictArray);
-      funcc()
       loadingref.current.style.display = "none";
       loadingref2.current.style.display = "none";
     }
   }, [list1])
-
-useEffect(() => {
-     console.log(item);
-   // return(()=>funcc()
-  }, [item])
-
-
 
   const finalize = () => {
     localStorage.setItem("list", JSON.stringify(list));
