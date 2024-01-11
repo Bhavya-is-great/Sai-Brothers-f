@@ -135,9 +135,9 @@ function Cart() {
           const email1 = process.env.REACT_APP_EMAIL1
           const email2 = process.env.REACT_APP_EMAIL2
           const email3 = process.env.REACT_APP_EMAIL3
-          //seller(email1)
-         // seller(email2)
-          //seller(email3)
+          seller(email1)
+          seller(email2)
+          seller(email3)
           setUserData({
             name: "",
             number: "",
