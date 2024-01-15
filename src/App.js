@@ -24,15 +24,6 @@ function App() {
 
 // const navigate = useNavigate()
 
-  window.addEventListener('onbeforeunload', () => {
-    // Redirect to home page
-//window.location.assign('/');
-    alert("reloading can get a error go to home and then reload")
-    //navigate('/')
-});
-
-
-
   return (
     <>
       <BrowserRouter>
