@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap';
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home';
 import Cart from './Components/Cart'
 import Developer from './Components/Developer';
@@ -22,12 +22,13 @@ import ChangeList from './Components/elements/ChangeList';
 
 function App() {
 
-const navigate = useNavigate()
+// const navigate = useNavigate()
 
-  window.addEventListener('unload', () => {
+  window.addEventListener('onbeforeunload', () => {
     // Redirect to home page
 //window.location.assign('/');
-    navigate('/')
+    alert("reloading can get a error go to home and then reload")
+    //navigate('/')
 });
 
 
