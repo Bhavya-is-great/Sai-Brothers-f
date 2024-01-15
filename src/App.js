@@ -23,9 +23,12 @@ import ChangeList from './Components/elements/ChangeList';
 function App() {
 
 
-  window.onbeforeunload = (event) => {
-    window.location.assign('/');
-};
+  window.addEventListener('unload', () => {
+    // Redirect to home page
+window.location.assign('/');
+});
+
+
 
   return (
     <>
