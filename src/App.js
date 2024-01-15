@@ -21,6 +21,12 @@ import Search from './Components/Search';
 import ChangeList from './Components/elements/ChangeList';
 
 function App() {
+
+
+  window.onbeforeunload = (event) => {
+    window.location.assign('/');
+};
+
   return (
     <>
       <BrowserRouter>
